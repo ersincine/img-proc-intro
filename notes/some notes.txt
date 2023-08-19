@@ -1,0 +1,142 @@
+
+[2, 0] - [0, 1] = [2, -1]
+[0, 1] - [2, 0] = [-2, 1]
+
+
+d(orange, this_color) = L2_norm(orange - this_color)
+
+Metric
+d(A, B) = d(B, A)
+d(A, A) = 0
+Ucgen esitsizligi d(A, B) + d(B, C) >= d(A, C)
+
+L1
+
+L2
+
+
+
+
+if distance(pixel, purple) == 0
+
+
+
+
+def distance(pixel, purple):
+	return 0 if pixel == purple else 1
+
+
+
+
+Distance olarak %99 L-norm kullanirsin.
+L-norm olarak da %85 L2, %10 L1, %4 L-sonsuz, %1 diger 
+
+
+RGB
+
+Turuncumsu
+Orangish
+
+x evet turuncumsu
+y hayir turumcu degil
+
+Amaaaa
+Bazen x'in orange'a mesafesi yuksek, y'nin dusuk
+
+
+
+5/9 yesil
+2/9 mavi
+2/9 kirmizi
+
+2/4
+1/4
+1/4
+
+Teoride imge bir fonksiyondur. f(x, y) -- pratikte matristir (tensor)
+Teoride degerler 0 ile 1 arasindadir -- pratikte 0-255 arasindadir.
+
+
+interpolation
+- hizli olsun dersen bilinear
+- iyi olsun dersen bicubic
+kullan
+Ama baska yontemler de var
+
+f(1, 1) = 5
+f(1.1, 1.2) = 5.3
+f(2, 1) = 8
+
+
+bit depth: bir derinligi. 1 piksel icin harcaman gereken bit sayisi
+Grayscale bir image icin (1 channel) genelde 8 bit derinligi olur
+RGB icin genelde 24 bit derinligi olur (8+8+8)
+	Yani tipik bir RGB imgede kac farkli renk olabilir? 2^24 yaklasik 16 milyon (true color)
+
+
+Resolution 
+	width x height
+
+	row (height) x column (width)
+
+
+RGB image, 8000x4000, bit depth 24
+Bu imge normal sartlarda ne kadar yer kaplar? 
+Yaklasik 92 MB
+
+
+How does JPEG work?
+
+0000
+0001
+
+
+def g(x, y):
+	r, g, b = f(x, y)
+	return T(r, g, b)  # T bir image filtering fonksiyonudur. (Ornegin aydinlatma)
+
+
+def g(x, y):
+	new_x, new_y = T(x, y)  # T bir image warping fonksiyonudur. (Ornegin dondurme)
+	return f(new_x, new_y)
+
+Her correspondence aslinda 2 denklemdir.
+Mesela (3, 5) --> (8, 2) demek
+aslinda 8 = 3 + tx
+	2 = 5 + ty
+
+Sadece translation
+1 tane correspondence
+(3, 5) --> (8, 2)
+
+tx: 5
+ty: -3
+
+Sadece Euclidean = Translation + Rotation
+3 DoF var yani 3 denklem lazim.
+Yani kac eslesme gerekir?
+2 eslesme gerekir.
+
+Icinde tx, ty, theta bilinmeyenleri var.
+
+
+RGB to grayscale icin bir formul:
+0.299 ∙ Red + 0.587 ∙ Green + 0.114 ∙ Blue
+
+
+https://docs.opencv.org/4.8.0/index.html
+
+
+See (Google Images'ta falan ara)
+- Gamma transformations
+- rgb screen close up
+- demosaicing
+- bayer filter
+- incushion distortion, barrel distortion
+- camera calibration
+- camera pitch yaw roll
+
+
+
+
+
